@@ -4,8 +4,10 @@ welcome to my QA porfolio. I am former scientist interested in software testing.
 
 Tesco Online Application - specificaion based testing 
 
+Test scenarios 
+
 TS1 - Login 
 
-Tesco specification 
+Related Test Cases: 
 
-TC1 
+[TC1_login_valid](.//)
