@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tesco Online Shop – Exploratory Testing Report</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#222;max-width:1200px;margin:40px auto;padding:0 24px;background:#fff}
+h1{margin-bottom:4px} h2{margin-top:38px;border-bottom:2px solid #ddd;padding-bottom:6px} h3{margin-top:28px}
+.meta{background:#f5f5f5;padding:16px 20px;border-radius:8px;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}th,td{border:1px solid #ccc;padding:10px;vertical-align:top}th{background:#f0f0f0;text-align:left}
+.badge{display:inline-block;padding:3px 8px;border-radius:12px;background:#eee;font-size:12px;font-weight:bold}
+.bug{background:#fff4f4}.observation{background:#fffaf0}.pass{background:#f5fff5}
+.metric{width:auto}.metric td:first-child{font-weight:bold}.total{font-weight:bold}
+ul{padding-left:24px}.summary{background:#f7f7f7;padding:18px;border-radius:8px}
+code{background:#f3f3f3;padding:2px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+<h1>Exploratory Testing Report</h1>
+<h2 style="border:0;margin-top:0">Tesco Online Shop — Session 01</h2>
+<div class="meta">
+<p><strong>Testing type:</strong> Exploratory testing</p>
+<p><strong>Environment:</strong> Google Chrome, laptop/notebook</p>
+<p><strong>Customer type:</strong> Unregistered customer</p>
+<p><strong>Session status:</strong> Completed</p>
+</div>
+</header>
+
+<h2>1. Mission</h2>
+<p>Test making a small purchase on the Tesco Online Shop (Slovak version) with delivery.</p>
+<p><strong>URL address:</strong> <a href="https://potravinydomov.itesco.sk/shop/sk-SK/landing/groceries" target="_blank" rel="noopener">https://potravinydomov.itesco.sk/shop/sk-SK/landing/groceries</a></p>
+
+<h2>2. Charter</h2>
+<ul>
+<li>Find one grocery product from the following categories: <strong>alcohol, bakery products, and fruit</strong>.</li>
+<li>Add the selected product to the basket.</li>
+<li>Set up a delivery time.</li>
+</ul>
+
+<h2>3. Charter vs. Opportunity</h2>
+<ul>
+<li>Only a product from the <strong>alcohol</strong> category was tested.</li>
+<li>Adding the selected product to the basket could not be completed because <strong>registration was required</strong>.</li>
+<li>Setting up a delivery time could not be tested because <strong>registration was required</strong>.</li>
+</ul>
+<p>The registration requirement limited the scope of the original charter. The homepage already indicated “Sign in to start shopping”, and the test confirmed that registration was required to continue with the purchase.</p>
+
+<h2>4. Testing Approach</h2>
+<p><strong>Manual exploratory testing was performed.</strong> During the session, the product search, filtering and sorting functionalities were evaluated, as well as the attempt to add a product to the basket.</p>
+<p><strong>Available products from the alcohol category were used as test data</strong>, including Pilsner beer products and products with different price values.</p>
+<p>During the UX evaluation, particular attention was paid to the clarity of UI controls, the organisation and readability of the product catalogue, consistency of product information, and the ease of completing individual steps of the shopping journey.</p>
+
+<h2>5. Findings</h2>
+<table>
+<thead><tr><th>Step</th><th>Action</th><th>Testing category</th><th>Test data</th><th>Expected outcome</th><th>Actual outcome</th><th>Attachments</th></tr></thead>
+<tbody>
+<tr class="pass"><td>1</td><td>Loaded the Tesco Online Shop homepage.</td><td>Functional – Pass</td><td>Tesco Online Shop homepage</td><td>The Tesco Online Shop homepage should load at the specified URL.</td><td>The Tesco Online Shop homepage loaded successfully.</td><td>Main page screenshot</td></tr>
+<tr class="pass"><td>2</td><td>Navigated to <strong>More → Drinks</strong> by clicking on the “Drinks” button.</td><td>Functional / UI – Pass</td><td>Drinks category</td><td>Drink-related categories should be displayed.</td><td>Drink-related categories were displayed as expandable/clickable categories, with <strong>all drink products</strong> displayed below.</td><td>—</td></tr>
+<tr class="pass"><td>3</td><td>Selected the <strong>Alcohol</strong> category and clicked <strong>“Show more”</strong>.</td><td>Functional / UI – Pass</td><td>Alcohol category</td><td>Additional categories should be displayed.</td><td>Additional categories were displayed as expected.</td><td>—</td></tr>
+<tr class="observation"><td>4</td><td>Searched for the <strong>Drinks</strong> category and displayed the products within it.</td><td>UI / UX – Observation</td><td>Drinks category</td><td>After selecting the Drinks category, all drink products should be displayed.</td><td>The category was not available among the categories on the main list. The <strong>“More”</strong> category was opened to access it.</td><td>—</td></tr>
+<tr class="observation"><td>5</td><td>Used the <strong>“Sort by”</strong> function.</td><td>Functional / UI – Observation</td><td>All drinks</td><td>Several sorting options should be available, including sorting by price and alphabetically by product name.</td><td>Sorting was available by price, but alphabetical sorting by product name was not available.</td><td>—</td></tr>
+<tr class="observation"><td>6</td><td>Selected sorting by price from highest to lowest by clicking on the <strong>“Price (High to Low)”</strong> field.</td><td>UI – Observation</td><td>All drinks</td><td>Products should be displayed from the highest price to the lowest price.</td><td>Products with the same price were not ordered alphabetically.</td><td>Printscreen 0</td></tr>
+<tr class="observation"><td>7</td><td>Compared product names and font sizes.</td><td>UI – Observation</td><td>Chivas Regal; Canerock Rum</td><td>Product names should be displayed consistently.</td><td><strong>“CHIVAS REGAL 12YO SCOTCH WHISKY 40% 0,7 l”</strong> was displayed in a larger font than the adjacent <strong>“Canerock Rum 40% 70 cl”</strong>.</td><td>Printscreen 1</td></tr>
+<tr class="observation"><td>8</td><td>Compared alcohol volume units.</td><td>UI – Observation</td><td>Meukow Cognac; Canerock Rum</td><td>Product volume units should be presented consistently.</td><td>Units were displayed inconsistently: <strong>“0,7 l”</strong> versus <strong>“70 cl”</strong>.</td><td>Printscreen 2</td></tr>
+<tr class="bug"><td>9</td><td>Checked lower-priced products while sorting from highest to lowest.</td><td>Sorting – Bug</td><td>NESCAFÉ €0.49; Relax Frozen €0.60</td><td>Higher-priced products should appear before lower-priced products.</td><td><strong>NESCAFÉ 3in1 Classic (€0.49)</strong> appeared before <strong>Relax Frozen (€0.60)</strong>.</td><td>Printscreen 3</td></tr>
+<tr class="bug"><td>10</td><td>Selected sorting by price from lowest to highest by clicking on the <strong>“Price (Low to High)”</strong> field.</td><td>Sorting – Bug</td><td>All drinks</td><td>Products should be displayed from the lowest price to the highest price.</td><td><strong>Relax Frozen (€0.60)</strong> appeared before the cheaper <strong>Mitická mineral water (€0.49)</strong>.</td><td>Printscreen 4</td></tr>
+<tr class="pass"><td>11</td><td>Searched for all Pilsner products by entering <strong>“Pilsner”</strong> into the <strong>“Search”</strong> field.</td><td>Search – Pass</td><td>Pilsner</td><td>Relevant products matching “Pilsner” should be returned.</td><td>Five Pilsner beer products were returned.</td><td>Printscreen 5</td></tr>
+<tr class="pass"><td>12</td><td>Sorted Pilsner search results from lowest to highest price by clicking on the <strong>“Price (Low to High)”</strong> field.</td><td>Sorting – Pass</td><td>Pilsner search results</td><td>Products should be ordered from the lowest to the highest price.</td><td>The five Pilsner products were correctly ordered from lowest to highest price.</td><td>Printscreen 6</td></tr>
+<tr class="pass"><td>13</td><td>Sorted Pilsner search results from highest to lowest price by clicking on the <strong>“Price (High to Low)”</strong> field.</td><td>Sorting – Pass</td><td>Pilsner search results</td><td>Products should be ordered from the highest to the lowest price.</td><td>The five Pilsner products were correctly ordered from highest to lowest price.</td><td>Printscreen 7</td></tr>
+<tr class="pass"><td>14</td><td>Navigated to <strong>Drinks → Beer</strong> by clicking on the “Beers” button.</td><td>Functional / UI – Pass</td><td>Beer category</td><td>The Beer category should expand and display beer products.</td><td>The Beer category expanded and displayed beer products.</td><td>—</td></tr>
+<tr class="observation"><td>15</td><td>Reviewed ordering and distribution of Pilsner products within the Beer category.</td><td>UI / UX – Observation</td><td>Pilsner products</td><td>Products should be presented in a clear and consistent order.</td><td>Pilsner products were not ordered alphabetically or by price. Two appeared on page 1, two on page 3, and one on page 7.</td><td>—</td></tr>
+<tr class="observation"><td>16</td><td>Compared names of canned and bottled Pilsner products.</td><td>UI / UX – Observation</td><td>Pilsner Urquell products</td><td>Product names should make variants easy to distinguish.</td><td>The names were very similar and could easily be confused: <strong>“Pilsner Urquell Pivo ležiak svetlý 500 ml”</strong> and <strong>“Pilsner Urquell Pivo svetlý ležiak 500 ml”</strong>.</td><td>Printscreen 8</td></tr>
+<tr class="pass"><td>17</td><td>Opened <strong>“Pilsner Urquell Pivo svetlý ležiak 500 ml”</strong> by clicking on the product.</td><td>Functional – Pass</td><td>Pilsner Urquell Pivo svetlý ležiak 500 ml</td><td>Opening a product should display detailed product information.</td><td>Detailed product information was displayed.</td><td>—</td></tr>
+<tr class="pass"><td>18</td><td>Reviewed product price and recycling deposit information.</td><td>UI / Information – Pass</td><td>Pilsner Urquell Pivo svetlý ležiak 500 ml</td><td>Product information should clearly indicate how the recycling deposit affects the amount payable.</td><td>A separate <strong>€0.13</strong> recycling deposit was displayed below the <strong>€1.49</strong> product price.</td><td>—</td></tr>
+<tr class="pass"><td>19</td><td>Reviewed age restriction information for buying alcohol.</td><td>Functional / UI – Pass</td><td>Pilsner Urquell Pivo svetlý ležiak 500 ml</td><td>The product information should state the relevant age restriction for alcohol purchases.</td><td>A warning stated that sale is prohibited to persons under 18 and to persons who may be significantly affected by alcohol.</td><td>Printscreen 9</td></tr>
+<tr class="observation"><td>20</td><td>Clicked the <strong>“Add”</strong> icon for the Pilsner product.</td><td>Functional / UX – Observation</td><td>Pilsner Urquell Pivo svetlý ležiak 500 ml</td><td>The customer should be clearly informed if registration is required before continuing with the purchase.</td><td>The system requested registration instead of adding the product to the basket. The homepage already displayed <strong>“Sign in to start shopping”</strong>, and the test confirmed that registration was required.</td><td>Printscreen 10</td></tr>
+</tbody>
+</table>
+
+<h2>6. To-Do / Follow-up</h2>
+<table><thead><tr><th>ID</th><th>To-do / follow-up action</th><th>Reason</th><th>Priority</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>UX-001</td><td>Investigate whether product ordering in “All drinks” should be more consistent and predictable.</td><td>Current ordering makes products harder to locate.</td><td>Medium</td><td>Open</td></tr>
+<tr><td>UX-002</td><td>Consider making the registration requirement more explicit on the homepage and before the customer attempts to purchase.</td><td>The homepage already informs customers with the message <strong>“Sign in to start shopping”</strong>, and the test confirmed that registration is required. However, the message does not explicitly state that a purchase cannot be completed without registration.</td><td>Medium</td><td>Open</td></tr>
+<tr><td>UX-003</td><td>Investigate standardisation of alcohol volume units and differentiation between similar product variants.</td><td>Inconsistent units and similar names may make products harder to distinguish.</td><td>Low</td><td>Open</td></tr>
+<tr><td>TEST-001</td><td>Repeat the shopping journey with a registered customer.</td><td>Adding the product to the basket and setting up delivery could not be tested as an unregistered customer.</td><td>High</td><td>Open</td></tr>
+<tr><td>TEST-002</td><td>Test bakery products and fruit.</td><td>These categories were included in the original charter but were not covered during the session.</td><td>Medium</td><td>Open</td></tr>
+<tr><td>TEST-003</td><td>Test the delivery-time selection flow with a registered customer.</td><td>Delivery setup could not be reached during the current session.</td><td>High</td><td>Open</td></tr>
+</tbody></table>
+
+<h2>7. TBS Metrics</h2>
+<table class="metric"><tbody>
+<tr><td>Testing</td><td>60 min</td></tr>
+<tr><td>Bug investigation / documentation</td><td>45 min</td></tr>
+<tr><td>Setup</td><td>5 min</td></tr>
+<tr class="total"><td>Total session time</td><td>110 min</td></tr>
+</tbody></table>
+
+<h2>8. Session Summary</h2>
+<div class="summary"><p>The session focused on the Tesco Online Shop experience from the perspective of an unregistered customer. The exploration covered product discovery, category navigation, search, sorting, product information, UX consistency, and the attempt to add an alcoholic product to the basket.</p>
+<p>Two functional defects related to price sorting were identified. Several UX/UI observations were also recorded, particularly concerning product ordering, inconsistent units, product-name presentation, and discoverability.</p>
+<p>The original shopping journey could not be completed because registration was required when attempting to add the selected product to the basket. As a result, basket and delivery functionality should be investigated in a follow-up session using a registered customer account.</p></div>
+
+<h2>9. Attachments</h2>
+<ul>
+<li>Printscreen 0 — Product ordering / equal prices</li>
+<li>Printscreen 1 — Inconsistent product-name font size</li>
+<li>Printscreen 2 — Inconsistent alcohol volume units</li>
+<li>Printscreen 3 — Incorrect highest-to-lowest price sorting</li>
+<li>Printscreen 4 — Incorrect lowest-to-highest price sorting</li>
+<li>Printscreen 5 — Pilsner search results</li>
+<li>Printscreen 6 — Pilsner sorting: lowest to highest</li>
+<li>Printscreen 7 — Pilsner sorting: highest to lowest</li>
+<li>Printscreen 8 — Similar Pilsner product names</li>
+<li>Printscreen 9 — Alcohol age restriction information</li>
+<li>Printscreen 10 — Registration required when adding product to basket</li>
+</ul>
+</body></html>
