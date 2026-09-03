@@ -26,6 +26,22 @@ There are other parameters required to be set up:
 in all test cases, the same values of required parameters were used. 
 No API key required.
 </p>
-
-<p>Please click the link below to view the test cases and bug reports.</p>
-<p> <a href="Manual_testing_Tesco/Specification_based_testing/Open_Meteo_API_Testing/TC1_Valid_coordinates.md"> Tesco Online Shop – Exploratory Testing Report </a> </p> </body> </html>
+<table> <thead> <tr> <th>Test Case</th> <th>Request Screenshot</th> <th>Response Screenshot</th> <th>Bug Report</th> </tr> </thead> 
+  <tbody> <tr> <td>TC-01 – Valid coordinates</td> <td>Request-TC1</td> <td>Response-TC1</td> <td>Bug</td> </tr> 
+  <tr><td>TC-02 – Latitude upper boundary: <code>90</code></td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-03 – Latitude above upper boundary: <code>90.0001</code></td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td></tr>
+  <tr> <td>TC-04 – Latitude lower boundary: <code>-90</code></td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-05 – Latitude below lower boundary: <code>-90.0001</code></td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-06 – Longitude upper boundary: <code>180</code></td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-07 – Longitude above upper boundary: <code>180.0001</code></td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-08 – Longitude lower boundary: <code>-180</code></td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-09 – Longitude below lower boundary: <code>-180.0001</code></td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td></tr> 
+  <tr> <td>TC-10 – Missing latitude</td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-11 – Missing longitude</td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-12 – Invalid latitude type</td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-13 – Invalid longitude type</td> <td>📷</td> <td>📷</td> <td>🐞 If unexpected</td> </tr> 
+  <tr> <td>TC-14 – Integer coordinates</td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-15 – Coordinates with 1 decimal</td> <td>📷</td> <td>📷</td> <td>—</td> </tr>
+  <tr> <td>TC-16 – Coordinates with 2 decimals</td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-17 – Coordinates with 3 decimals</td> <td>📷</td> <td>📷</td> <td>—</td> </tr> 
+  <tr> <td>TC-18 – Coordinates with 6 decimals</td> <td>📷</td> <td>📷</td> <td>—</td> </tr> </tbody> </table>
