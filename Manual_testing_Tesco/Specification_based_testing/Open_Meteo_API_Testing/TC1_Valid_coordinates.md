@@ -10,8 +10,8 @@ https://api.open-meteo.com/v1/forecast
 
 Test data:
 
-Latitude: 48.1486
-Longitude: 17.1077
+Latitude: 48.14
+Longitude: 17.10
 
 Steps:
 
