@@ -1,1 +1,23 @@
+TC5_Latitude_bellow_lower_boundary
 
+Test Case: Verify that the API rejects a latitude value bellow the minimum allowed boundary.
+
+Method: GET
+
+Endpoint:
+https://api.open-meteo.com/v1/forecast
+
+Test data:
+
+Latitude: -90.01
+Longitude: 17.10
+
+Steps:
+
+Send a GET request with the specified latitude and longitude.
+Check the HTTP response status.
+Check the response body.
+
+Expected result:
+API returns an error response.
+Request is not processed as a valid geographic coordinate.
