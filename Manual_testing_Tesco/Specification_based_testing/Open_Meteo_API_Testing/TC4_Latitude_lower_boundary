@@ -1,6 +1,6 @@
 TC4_Latitude_lower_boundary
 
-Test Case: Verify that the API accepts the maximum valid latitude.
+Test Case: Verify that the API accepts the minimum valid latitude.
 
 Method: GET
 
