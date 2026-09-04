@@ -1,1 +1,20 @@
+TC6_Longitude_upper_boundary
+
+Test Case: Verify that the API accepts the maximum valid longitude.
+
+Method: GET
+
+Endpoint:
+https://api.open-meteo.com/v1/forecast
+
+Test data:
+
+Latitude: 48.14
+Longitude: 180.00
+
+Steps:
+
+Send a GET request with the specified latitude and longitude.
+Check the HTTP response status.
+Check the response body.
 
