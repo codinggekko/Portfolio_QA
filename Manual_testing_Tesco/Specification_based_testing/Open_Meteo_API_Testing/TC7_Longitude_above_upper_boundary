@@ -1,1 +1,23 @@
+TC7_Longitude_above_upper_boundary
 
+Test Case: Verify that the API rejects a longitude value above the maximum allowed boundary.
+
+Method: GET
+
+Endpoint:
+https://api.open-meteo.com/v1/forecast
+
+Test data:
+
+Latitude: 48.14
+Longitude: 180.01
+
+Steps:
+
+Send a GET request with the specified latitude and longitude.
+Check the HTTP response status.
+Check the response body.
+
+Expected result:
+API returns an error response.
+Request is not processed as a valid geographic coordinate.
