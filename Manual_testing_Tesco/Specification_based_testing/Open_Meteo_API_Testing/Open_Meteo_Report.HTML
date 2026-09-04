@@ -1,13 +1,14 @@
 <h4>Test scenario</h4>
 <p>Test API of Open-Meteo web application for location coordinates</p>
-<p>API documentation about coordinates:
-parameter:latitude, longitude
-Format:Floating point
-Required parameter:Yes
-Description:Geographical WGS84 coordinates of the location. Multiple coordinates can be comma separated. E.g. &latitude=52.52,48.85&longitude=13.41,2.35. To return data for multiple locations the JSON output changes to a list of structures. CSV and XLSX formats add a column location_id. For North and South America locations use negative longitudes, because they lie west of Greenwich.
-There are other parameters required to be set up: 
-in all test cases, the same values of required parameters were used. 
-No API key required.
+<p> The API endpoint /v1/forecast accepts a geographical coordinate, a list of weather variables and responds with a JSON hourly weather forecast for 7 days. 
+Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is set, up to 16 days of forecast can be returned.<p> 
+<p>API documentation about coordinates parameter:
+</p> parameter:latitude, longitude </p>
+</p> Format:Floating point </p>
+</p> Required parameter:Yes </p>
+</p> Description:Geographical WGS84 coordinates of the location. Multiple coordinates can be comma separated. E.g. &latitude=52.52,48.85&longitude=13.41,2.35. To return data for multiple locations the JSON output changes to a list of structures. CSV and XLSX formats add a column location_id. For North and South America locations use negative longitudes, because they lie west of Greenwich.</p> 
+</p> Other parameters are not required.</p>
+</p> No API key required.</p>
 </p>
 <table> <thead> <tr> <th>Test Case</th> <th>Request Screenshot</th> <th>Response Screenshot</th> <th>Bug Report</th> </tr> </thead> 
   <tbody> <tr> <td>TC-01 – Valid coordinates</td> <td>Request-TC1</td> <td>Response-TC1</td> <td>Bug</td> </tr> 
