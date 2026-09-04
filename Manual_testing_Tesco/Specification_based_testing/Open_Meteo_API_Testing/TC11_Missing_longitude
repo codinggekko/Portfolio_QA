@@ -1,1 +1,23 @@
+TC11_Missing_longitude
 
+Test Case: Verify that the API rejects a missing longitude value.
+
+Method: GET
+
+Endpoint:
+https://api.open-meteo.com/v1/forecast
+
+Test data:
+
+Latitude: 48.14
+Longitude: 
+
+Steps:
+
+Send a GET request with the specified latitude and longitude.
+Check the HTTP response status.
+Check the response body.
+
+Expected result:
+API returns an error response.
+Request is not processed as a valid geographic coordinate.
