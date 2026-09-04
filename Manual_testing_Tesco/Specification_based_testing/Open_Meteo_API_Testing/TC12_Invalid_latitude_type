@@ -9,7 +9,7 @@ https://api.open-meteo.com/v1/forecast
 
 Test data:
 
-Latitude: "Bratislava"
+Latitude: Bratislava
 Longitude: 17.10
 
 Steps:
