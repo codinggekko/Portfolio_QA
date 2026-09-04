@@ -18,3 +18,8 @@ Send a GET request with the specified latitude and longitude.
 Check the HTTP response status.
 Check the response body.
 
+Expected result:
+
+Response status is 200 OK.
+Response body is returned in JSON format.
+Weather data is provided for the requested coordinates.
