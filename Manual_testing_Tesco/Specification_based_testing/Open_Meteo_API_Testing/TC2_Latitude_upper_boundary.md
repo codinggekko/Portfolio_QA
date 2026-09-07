@@ -1,6 +1,6 @@
 TC-02 — Latitude upper boundary
 
-Test Case: Verify that the API accepts the maximum valid latitude.
+Test Case: Verify that the API returns weather data for the maximum valid latitude.
 
 Method: GET
 
