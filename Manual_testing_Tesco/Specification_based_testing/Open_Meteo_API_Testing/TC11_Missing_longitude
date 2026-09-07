@@ -1,4 +1,4 @@
-TC11_Missing_longitude
+TC-11 — Missing longitude
 
 Test Case: Verify that the API rejects a missing longitude value.
 
@@ -14,7 +14,7 @@ Longitude:
 
 Steps:
 
-Send a GET request with the specified latitude and longitude.
+Send a GET request with the specified latitude.
 Check the HTTP response status.
 Check the response body.
 
