@@ -1,4 +1,4 @@
-TC-06 — Longitude above upper boundary
+TC-07 — Longitude above upper boundary
 
 Test Case: Verify that the API rejects a longitude value above the maximum allowed boundary.
 
