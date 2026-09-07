@@ -1,4 +1,4 @@
-TC14_Integer_coordinates
+TC-14 — Integer coordinates
 
 Test Case: Verify that the API accepts integer coordinates and returns weather data.
 
