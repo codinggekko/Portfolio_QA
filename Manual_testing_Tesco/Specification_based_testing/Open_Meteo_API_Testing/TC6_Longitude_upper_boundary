@@ -1,6 +1,6 @@
 TC-06 — Longitude upper boundary
 
-Test Case: Verify that the API accepts the maximum valid longitude.
+Test Case: Verify that the API returns weather data for the maximum valid longitude.
 
 Method: GET
 
