@@ -1,4 +1,4 @@
-TC9_Longitude_bellow_lower_boundary
+TC-09 — Longitude bellow lower boundary
 
 Test Case: Verify that the API rejects a longitude value bellow the minimum allowed boundary.
 
