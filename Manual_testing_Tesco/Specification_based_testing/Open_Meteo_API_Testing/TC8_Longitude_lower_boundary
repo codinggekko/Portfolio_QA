@@ -1,4 +1,4 @@
-TC8_Longitude_lower_boundary
+TC-08 — Longitude lower boundary
 
 Test Case: Verify that the API accepts the minimum valid longitude.
 
@@ -8,7 +8,7 @@ Endpoint: https://api.open-meteo.com/v1/forecast
 
 Test data:
 
-Latitude: 48.14 Longitude: -180
+Latitude: 48.14 Longitude: -180.00
 
 Steps:
 
