@@ -1,4 +1,4 @@
-TC4_Latitude_lower_boundary
+TC-04 — Latitude_lower_boundary
 
 Test Case: Verify that the API returns weather data for the minimum valid latitude.
 
