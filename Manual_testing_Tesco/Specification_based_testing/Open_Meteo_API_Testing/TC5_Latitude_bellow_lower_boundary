@@ -1,4 +1,4 @@
-TC-05 — Latitude_bellow_lower_boundary
+TC-05 — Latitude bellow lower boundary
 
 Test Case: Verify that the API rejects a latitude value bellow the minimum allowed boundary.
 
