@@ -1,4 +1,4 @@
-TC13_Invalid_longitude_type
+TC-13 — Invalid longitude type
 
 Test Case: Verify that the API rejects an invalid longitude data type.
 
