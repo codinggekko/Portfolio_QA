@@ -1,4 +1,4 @@
-TC-08 — Missing latitude
+TC-10 — Missing latitude
 
 Test Case: Verify that the API rejects a missing latitude value.
 
