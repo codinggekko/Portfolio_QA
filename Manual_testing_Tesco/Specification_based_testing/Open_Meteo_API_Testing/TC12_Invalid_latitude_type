@@ -1,4 +1,4 @@
-TC12_Invalid_latitude_type
+TC-12 — Invalid latitude type
 
 Test Case: Verify that the API rejects an invalid latitude data type.
 
