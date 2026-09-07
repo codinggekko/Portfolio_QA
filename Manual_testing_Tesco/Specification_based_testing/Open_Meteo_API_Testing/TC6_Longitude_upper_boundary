@@ -1,4 +1,4 @@
-TC-06 — Longitude_upper_boundary
+TC-06 — Longitude upper boundary
 
 Test Case: Verify that the API accepts the maximum valid longitude.
 
