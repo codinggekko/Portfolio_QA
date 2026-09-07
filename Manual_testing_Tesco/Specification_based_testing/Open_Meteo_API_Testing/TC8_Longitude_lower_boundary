@@ -1,6 +1,6 @@
 TC-08 — Longitude lower boundary
 
-Test Case: Verify that the API accepts the minimum valid longitude.
+Test Case:  Verify that the API returns weather data for the minimum valid longitude.
 
 Method: GET
 
