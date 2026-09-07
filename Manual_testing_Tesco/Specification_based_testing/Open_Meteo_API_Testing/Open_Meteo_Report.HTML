@@ -10,19 +10,19 @@ Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is
 </p> Other parameters are not required.</p>
 </p> No API key required.</p>
 </p>
-<table> <thead> <tr> <th>Test Case</th> <th>Test Data</th> <th>Request</th> <th>Response Status</th> <th>Response Body</th> <th>Observations / Findings</th> <th>Bug Report</th> </tr> </thead>
+<table> <thead> <tr> <th>Test Case</th> <th>Test Data</th> <th>Request (Printscreen)</th> <th>Response Status</th> <th>Response Body</th> <th>Observations / Findings</th> <th>Bug Report</th> </tr> </thead>
 <tbody> 
 <tr> <td>TC-01 – Valid coordinates</td> <td><code>latitude=48.14<br>longitude=17.10</code></td> <td>Request-TC1</td> <td>200 OK</td> <td>Response-TC1</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-02 – Latitude upper boundary</td> <td><code>latitude=90.00<br>longitude=17.10</code></td> <td>Request-TC2</td> <td>—</td> <td>Response-TC2</td> <td>—</td> <td>—</td> </tr>
-<tr> <td>TC-03 – Latitude above upper boundary</td> <td><code>latitude=90.01<br>longitude=17.10</code></td> <td>Request-TC3</td> <td>—</td> <td>Response-TC3</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-04 – Latitude lower boundary</td> <td><code>latitude=-90.00<br>longitude=17.10</code></td> <td>Request-TC4</td> <td>—</td> <td>Response-TC4</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-05 – Latitude below lower boundary</td> <td><code>latitude=-90.01<br>longitude=17.10</code></td> <td>Request-TC5</td> <td>—</td> <td>Response-TC5</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-06 – Longitude upper boundary</td> <td><code>latitude=48.14<br>longitude=180.00</code></td> <td>Request-TC6</td> <td>—</td> <td>Response-TC6</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-07 – Longitude above upper boundary</td> <td><code>latitude=48.14<br>longitude=180.01</code></td> <td>Request-TC7</td> <td>—</td> <td>Response-TC7</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-08 – Longitude lower boundary</td> <td><code>latitude=48.14<br>longitude=-180.00</code></td> <td>Request-TC8</td> <td>—</td> <td>Response-TC8</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-09 – Longitude below lower boundary</td> <td><code>latitude=48.14<br>longitude=-180.01</code></td> <td>Request-TC9</td> <td>—</td> <td>Response-TC9</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-10 – Missing latitude</td> <td><code>longitude=17.10</code></td> <td>Request-TC10</td> <td>—</td> <td>Response-TC10</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-02 – Latitude upper boundary</td> <td><code>latitude=90.00<br>longitude=17.10</code></td> <td>Request-TC2</td> <td>200 OK</td> <td>Response-TC2</td> <td>—</td> <td>—</td> </tr>
+<tr> <td>TC-03 – Latitude above upper boundary</td> <td><code>latitude=90.01<br>longitude=17.10</code></td> <td>Request-TC3</td> <td>400 Bad request</td> <td>Response-TC3</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-04 – Latitude lower boundary</td> <td><code>latitude=-90.00<br>longitude=17.10</code></td> <td>Request-TC4</td> <td>200 OK</td> <td>Response-TC4</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-05 – Latitude below lower boundary</td> <td><code>latitude=-90.01<br>longitude=17.10</code></td> <td>Request-TC5</td> <td>400 Bad request</td> <td>Response-TC5</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-06 – Longitude upper boundary</td> <td><code>latitude=48.14<br>longitude=180.00</code></td> <td>Request-TC6</td> <td>200 OK</td> <td>Response-TC6</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-07 – Longitude above upper boundary</td> <td><code>latitude=48.14<br>longitude=180.01</code></td> <td>Request-TC7</td> <td>400 Bad request</td> <td>Response-TC7</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-08 – Longitude lower boundary</td> <td><code>latitude=48.14<br>longitude=-180.00</code></td> <td>Request-TC8</td> <td>200 OK</td> <td>Response-TC8</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-09 – Longitude below lower boundary</td> <td><code>latitude=48.14<br>longitude=-180.01</code></td> <td>Request-TC9</td> <td>400 Bad request</td> <td>Response-TC9</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-10 – Missing latitude</td> <td><code>longitude=17.10</code></td> <td>Request-TC10</td> <td>—</td> <td>Response-TC10</td> <td>400 Bad request</td> <td>—</td> </tr> 
 <tr> <td>TC-11 – Missing longitude</td> <td><code>latitude=48.14</code></td> <td>Request-TC11</td> <td>400 Bad Request</td> <td>Response-TC11</td> <td> Error message does not explicitly indicate that the required <code>longitude</code> parameter is missing. </td> <td>Potential bug</td> </tr> 
-<tr> <td>TC-12 – Invalid latitude type</td> <td><code>latitude=Bratislava<br>longitude=17.10</code></td> <td>Request-TC12</td> <td>—</td> <td>Response-TC12</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-13 – Invalid longitude type</td> <td><code>latitude=48.14<br>longitude=Bratislava</code></td> <td>Request-TC13</td> <td>—</td> <td>Response-TC13</td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-14 – Integer coordinates</td> <td><code>latitude=48<br>longitude=17</code></td> <td>Request-TC14</td> <td>—</td> <td>Response-TC14</td> <td>—</td> <td>—</td> </tr> </tbody> </table>
+<tr> <td>TC-12 – Invalid latitude type</td> <td><code>latitude=Bratislava<br>longitude=17.10</code></td> <td>Request-TC12</td> <td>400 Bad request</td> <td>Response-TC12</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-13 – Invalid longitude type</td> <td><code>latitude=48.14<br>longitude=Bratislava</code></td> <td>Request-TC13</td> <td>400 Bad request</td> <td>Response-TC13</td> <td>—</td> <td>—</td> </tr> 
+<tr> <td>TC-14 – Integer coordinates</td> <td><code>latitude=48<br>longitude=17</code></td> <td>Request-TC14</td> <td>200 OK</td> <td>Response-TC14</td> <td>—</td> <td>—</td> </tr> </tbody> </table>
