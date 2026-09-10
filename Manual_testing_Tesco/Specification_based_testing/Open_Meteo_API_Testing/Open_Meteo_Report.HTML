@@ -1,4 +1,4 @@
-<h4>Test scenario</h4>
+<h1>Test scenario</h1>
 <p>Test API of Open-Meteo web application for location coordinates</p>
 <p> The API endpoint /v1/forecast accepts a geographical coordinate, a list of weather variables and responds with a JSON hourly weather forecast for 7 days. 
 Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is set, up to 16 days of forecast can be returned.<p> 
@@ -12,10 +12,10 @@ Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is
 </p>
 <table> <thead> <tr> <th>Test Case</th> <th>Test Data</th> <th>Request (Printscreen)</th> <th>Response Status</th> <th>Response Body</th> <th>Observations / Findings</th> <th>Bug Report</th> </tr> </thead>
 <tbody> 
-<tr> <td>TC-01 – Valid coordinates</td> <td><code>latitude=48.14<br>longitude=17.10</code></td> <td><a href="TC1_Request.JPG">TC1 request</a></td> <td>200 OK</td> <td><a href="TC1_Response.JSON">TC1 response</a></td> <td></td> <td>—</td> </tr> 
-<tr> <td>TC-02 – Latitude upper boundary</td> <td><code>latitude=90.00<br>longitude=17.10</code></td> <td><a href="TC2_Request.JPG">TC2 request</a></td> <td>200 OK</td> <td><a href="TC2_Response.JSON">TC2 response</a></td> <td>no weather data were returned, only location and time zone</td> <td>—</td> </tr>
+<tr> <td>TC-01 – Valid coordinates</td> <td><code>latitude=48.14<br>longitude=17.10</code></td> <td><a href="TC1_Request.JPG">TC1 request</a></td> <td>200 OK</td> <td><a href="TC1_Response.JSON">TC1 response</a></td> <td></td> <td>response contains elevation data and GMT timezone</td> </tr> 
+<tr> <td>TC-02 – Latitude upper boundary</td> <td><code>latitude=90.00<br>longitude=17.10</code></td> <td><a href="TC2_Request.JPG">TC2 request</a></td> <td>200 OK</td> <td><a href="TC2_Response.JSON">TC2 response</a></td> <td>response contains elevation data and GMT timezone</td> <td>—</td> </tr>
 <tr> <td>TC-03 – Latitude above upper boundary</td> <td><code>latitude=90.01<br>longitude=17.10</code></td> <td><a href="TC3_Request.JPG">TC3 request</a></td> <td>400 Bad request</td> <td><a href="TC3_Response.JSON">TC3 response</a></td> <td>—</td> <td>—</td> </tr> 
-<tr> <td>TC-04 – Latitude lower boundary</td> <td><code>latitude=-90.00<br>longitude=17.10</code></td> <td><a href="TC4_Request.JPG">TC4 request</a></td> <td>200 OK</td> <td><a href="TC4_Response.JSON">TC4 response</a></td> <td>no weather data were returned, only location and time zone</td> <td>—</td> </tr> 
+<tr> <td>TC-04 – Latitude lower boundary</td> <td><code>latitude=-90.00<br>longitude=17.10</code></td> <td><a href="TC4_Request.JPG">TC4 request</a></td> <td>200 OK</td> <td><a href="TC4_Response.JSON">TC4 response</a></td> <td>response contains elevation data and GMT timezone</td> <td>—</td> </tr> 
 <tr> <td>TC-05 – Latitude below lower boundary</td> <td><code>latitude=-90.01<br>longitude=17.10</code></td> <td><a href="TC5_Request.JPG">TC5 request</a></td> <td>400 Bad request</td> <td><a href="TC5_Response.JSON">TC5 response</a></td> <td>—</td> <td>—</td> </tr> 
 <tr> <td>TC-06 – Longitude upper boundary</td> <td><code>latitude=48.14<br>longitude=180.00</code></td> <td><a href="TC6_Request.JPG">TC6 request</a></td> <td>200 OK</td> <td><a href="TC6_Response.JSON">TC6 response</a></td> <td>no weather data were returned, only location and time zone</td> <td>—</td> </tr> 
 <tr> <td>TC-07 – Longitude above upper boundary</td> <td><code>latitude=48.14<br>longitude=180.01</code></td> <td><a href="TC7_Request.JPG">TC7 request</a></td> <td>400 Bad request</td> <td><a href="TC7_Response.JSON">TC7 response</a></td> <td>—</td> <td>—</td> </tr> 
@@ -26,3 +26,15 @@ Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is
 <tr> <td>TC-12 – Invalid latitude type</td> <td><code>latitude=Bratislava<br>longitude=17.10</code></td> <td><a href="TC12_Request.JPG">TC12 request</a></td> <td>400 Bad request</td> <td><a href="TC12_Response.JSON">TC12 response</a></td> <td>—</td> <td>—</td> </tr> 
 <tr> <td>TC-13 – Invalid longitude type</td> <td><code>latitude=48.14<br>longitude=Bratislava</code></td> <td><a href="TC13_Request.JPG">TC13 request</a></td> <td>400 Bad request</td> <td><a href="TC13_Response.JSON">TC13 response</a></td> <td>—</td> <td>—</td> </tr> 
 <tr> <td>TC-14 – Integer coordinates</td> <td><code>latitude=48<br>longitude=17</code></td> <td><a href="TC14_Request.JPG">TC14 request</a></td> <td>200 OK</td> <td><a href="TC14_Response.JSON">TC14 response</a></td> <td>no weather data were returned, only location and time zone</td> <td>—</td> </tr> </tbody> </table>
+
+<h2>Test report sumary</h2>
+</p> The API response includes timezone and elevation fields. With timezone omitted from the request, the response reports GMT. 
+The response also reports the location's calculated elevation; the documentation states that a 90-meter digital elevation model
+is used by default for statistical downscaling.</p>
+</p> The exact location in response message is adjusted according to the 
+The precision of the location should be evaluated in next test scenario. 
+</p>
+
+
+
+
