@@ -29,7 +29,8 @@ Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is
 <tr> <td>TC-14 – Integer coordinates</td> <td><code>latitude=48<br>longitude=17</code></td> <td><a href="TC14_Request.JPG">TC14 request</a></td> <td>200 OK</td> <td><a href="TC14_Response.JSON">TC14 response</a></td> <td>API response includes timezone and elevation fields</td> <td>—</td> </tr> </tbody> </table>
 
 <h2>Test report sumary</h2>
-</p> The API response includes timezone and elevation fields. With timezone omitted from the request, the response reports GMT. 
+</p> Two potential bugs have been detected when missing altitide/longitude value. API did not accept the request, but the error message indicated XXX, not missing parameter. </p> 
+</p> The API response includes timezone and elevation fields. With timezone parameter omitted from the request, the response reports GMT. 
 The response also reports the location's calculated elevation; the documentation states that a 90-meter digital elevation model
 is used by default for statistical downscaling.</p>
 </p> The exact location in response message is adjusted according to the 
