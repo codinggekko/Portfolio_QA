@@ -9,7 +9,8 @@ Time always starts at 0:00 today and contains 168 hours. If &forecast_days=16 is
 </p> Description:Geographical WGS84 coordinates of the location. Multiple coordinates can be comma separated. E.g. &latitude=52.52,48.85&longitude=13.41,2.35. To return data for multiple locations the JSON output changes to a list of structures. CSV and XLSX formats add a column location_id. For North and South America locations use negative longitudes, because they lie west of Greenwich.</p> 
 </p> Other parameters are not required.</p>
 </p> No API key required.</p>
-</p>
+</p>full documentation is available at https://open-meteo.com/ </p>
+
 <table> <thead> <tr> <th>Test Case</th> <th>Test Data</th> <th>Request (Printscreen)</th> <th>Response Status</th> <th>Response Body</th> <th>Observations / Findings</th> <th>Bug Report</th> </tr> </thead>
 <tbody> 
 <tr> <td>TC-01 – Valid coordinates</td> <td><code>latitude=48.14<br>longitude=17.10</code></td> <td><a href="TC1_Request.JPG">TC1 request</a></td> <td>200 OK</td> <td><a href="TC1_Response.JSON">TC1 response</a></td> <td>API response includes timezone and elevation fields</td> <td></td> </tr> 
