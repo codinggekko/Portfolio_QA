@@ -1,141 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open-Meteo – API Testing Report</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#222;max-width:1200px;margin:40px auto;padding:0 24px;background:#fff}
+h1{margin-bottom:4px} h2{margin-top:38px;border-bottom:2px solid #ddd;padding-bottom:6px} h3{margin-top:28px}
+.meta{background:#f5f5f5;padding:16px 20px;border-radius:8px;margin:20px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}th,td{border:1px solid #ccc;padding:10px;vertical-align:top}th{background:#f0f0f0;text-align:left}
+.badge{display:inline-block;padding:3px 8px;border-radius:12px;background:#eee;font-size:12px;font-weight:bold}
+.bug{background:#fff4f4}.observation{background:#fffaf0}.pass{background:#f5fff5}
+.metric{width:auto}.metric td:first-child{font-weight:bold}.total{font-weight:bold}
+ul{padding-left:24px}.summary{background:#f7f7f7;padding:18px;border-radius:8px}
+code{background:#f3f3f3;padding:2px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>API Testing Report</h1>
+<h2 style="border:0;margin-top:0">Open-Meteo Forecast API</h2>
+
+<div class="meta">
+<p><strong>Testing type:</strong> Specification-based testing</p>
+<p><strong>Tool:</strong> Postman</p>
+<p><strong>Agent:</strong> Postman Desktop Agent</p>
+<p><strong>Environment:</strong> Microsoft Edge, laptop/notebook</p>
+<p><strong>Date of testing:</strong> September 2026</p>
+</div>
+</header>
+
+<h2>1. Test Scenario</h2>
+<p>Test the Open-Meteo Forecast API for geographical location coordinates.</p>
+
+<p>The API endpoint <code>/v1/forecast</code> accepts geographical coordinates and optional weather variables. The documentation states that <code>latitude</code> and <code>longitude</code> are required parameters, while other parameters are optional.</p>
+
+<h2>2. API Documentation</h2>
+
+<p><strong>Endpoint:</strong> <code>GET https://api.open-meteo.com/v1/forecast</code></p>
+
 <table>
-  <thead>
-    <tr>
-      <th>Test Case</th>
-      <th>Test Data</th>
-      <th>Request</th>
-      <th>Response Status</th>
-      <th>Response Body</th>
-      <th>Bug Report</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TC-01 – Valid coordinates</td>
-      <td><code>latitude=48.1486<br>longitude=17.1077</code></td>
-      <td>Request-TC1</td>
-      <td>200 OK</td>
-      <td>Response-TC1</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-02 – Latitude upper boundary: <code>90</code></td>
-      <td><code>latitude=90<br>longitude=17.1077</code></td>
-      <td>Request-TC2</td>
-      <td>—</td>
-      <td>Response-TC2</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-03 – Latitude above upper boundary: <code>90.0001</code></td>
-      <td><code>latitude=90.0001<br>longitude=17.1077</code></td>
-      <td>Request-TC3</td>
-      <td>—</td>
-      <td>Response-TC3</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-04 – Latitude lower boundary: <code>-90</code></td>
-      <td><code>latitude=-90<br>longitude=17.1077</code></td>
-      <td>Request-TC4</td>
-      <td>—</td>
-      <td>Response-TC4</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-05 – Latitude below lower boundary: <code>-90.0001</code></td>
-      <td><code>latitude=-90.0001<br>longitude=17.1077</code></td>
-      <td>Request-TC5</td>
-      <td>—</td>
-      <td>Response-TC5</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-06 – Longitude upper boundary: <code>180</code></td>
-      <td><code>latitude=48.1486<br>longitude=180</code></td>
-      <td>Request-TC6</td>
-      <td>—</td>
-      <td>Response-TC6</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-07 – Longitude above upper boundary: <code>180.0001</code></td>
-      <td><code>latitude=48.1486<br>longitude=180.0001</code></td>
-      <td>Request-TC7</td>
-      <td>—</td>
-      <td>Response-TC7</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-08 – Longitude lower boundary: <code>-180</code></td>
-      <td><code>latitude=48.1486<br>longitude=-180</code></td>
-      <td>Request-TC8</td>
-      <td>—</td>
-      <td>Response-TC8</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-09 – Longitude below lower boundary: <code>-180.0001</code></td>
-      <td><code>latitude=48.1486<br>longitude=-180.0001</code></td>
-      <td>Request-TC9</td>
-      <td>—</td>
-      <td>Response-TC9</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-10 – Missing latitude</td>
-      <td><code>longitude=17.1077</code></td>
-      <td>Request-TC10</td>
-      <td>—</td>
-      <td>Response-TC10</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-11 – Missing longitude</td>
-      <td><code>latitude=48.1486</code></td>
-      <td>Request-TC11</td>
-      <td>400 Bad Request</td>
-      <td>Response-TC11</td>
-      <td>Potential finding</td>
-    </tr>
-
-    <tr>
-      <td>TC-12 – Invalid latitude type</td>
-      <td><code>latitude=Bratislava<br>longitude=17.1077</code></td>
-      <td>Request-TC12</td>
-      <td>—</td>
-      <td>Response-TC12</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-13 – Invalid longitude type</td>
-      <td><code>latitude=48.1486<br>longitude=Bratislava</code></td>
-      <td>Request-TC13</td>
-      <td>—</td>
-      <td>Response-TC13</td>
-      <td>—</td>
-    </tr>
-
-    <tr>
-      <td>TC-14 – Integer coordinates</td>
-      <td><code>latitude=40<br>longitude=17</code></td>
-      <td>Request-TC14</td>
-      <td>—</td>
-      <td>Response-TC14</td>
-      <td>—</td>
-    </tr>
-  </tbody>
+<thead>
+<tr><th>Parameter</th><th>Format</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latitude</code></td>
+<td>Floating point</td>
+<td>Yes</td>
+<td>Geographical WGS84 latitude coordinate. Multiple coordinates can be comma separated.</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td>Floating point</td>
+<td>Yes</td>
+<td>Geographical WGS84 longitude coordinate. Multiple coordinates can be comma separated.</td>
+</tr>
+<tr>
+<td><code>hourly</code></td>
+<td>String array</td>
+<td>No</td>
+<td>A list of weather variables which should be returned.</td>
+</tr>
+<tr>
+<td><code>daily</code></td>
+<td>String array</td>
+<td>No</td>
+<td>Daily weather variable aggregations.</td>
+</tr>
+<tr>
+<td><code>current</code></td>
+<td>String array</td>
+<td>No</td>
+<td>Weather variables for current conditions.</td>
+</tr>
+</tbody>
 </table>
 
+<p>No API key is required.</p>
+<p>Multiple coordinates can be provided as comma-separated values. The documentation states that for multiple locations the JSON output changes to a list of structures, while CSV and XLSX formats add a <code>location_id</code> column.</p>
 
+<h2>3. Test Cases and Results</h2>
+
+<table>
+<thead>
+<tr>
+<th>Test Case</th>
+<th>Test Data</th>
+<th>Request</th>
+<th>Response Status</th>
+<th>Response Body</th>
+<th>Observations / Findings</th>
+<th>Bug Report</th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="pass">
+<td>TC-01 – Valid coordinates</td>
+<td><code>latitude=48.14<br>longitude=17.10</code></td>
+<td><a href="TC1_Request.JPG">TC1 request</a></td>
+<td>200 OK</td>
+<td><a href="TC1_Response.JSON">TC1 response</a></td>
+<td>API accepted the required coordinate parameters. The response includes location-related metadata such as timezone and elevation. No weather variables were requested.</td>
+<td>—</td>
+</tr>
+
+<tr class="pass">
+<td>TC-02 – Latitude upper boundary</td>
+<td><code>latitude=90.00<br>longitude=17.10</code></td>
+<td><a href="TC2_Request.JPG">TC2 request</a></td>
+<td>200 OK</td>
+<td><a href="TC2_Response.JSON">TC2 response</a></td>
+<td>Maximum valid latitude value was accepted.</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>TC-03 – Latitude above upper boundary</td>
+<td><code>latitude=90.01<br>longitude=17.10</code></td>
+<td><a href="TC3_Request.JPG">TC3 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC3_Response.JSON">TC3 response</a></td>
+<td>Invalid latitude value was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr class="pass">
+<td>TC-04 – Latitude lower boundary</td>
+<td><code>latitude=-90.00<br>longitude=17.10</code></td>
+<td><a href="TC4_Request.JPG">TC4 request</a></td>
+<td>200 OK</td>
+<td><a href="TC4_Response.JSON">TC4 response</a></td>
+<td>Minimum valid latitude value was accepted.</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>TC-05 – Latitude below lower boundary</td>
+<td><code>latitude=-90.01<br>longitude=17.10</code></td>
+<td><a href="TC5_Request.JPG">TC5 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC5_Response.JSON">TC5 response</a></td>
+<td>Invalid latitude value was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr class="pass">
+<td>TC-06 – Longitude upper boundary</td>
+<td><code>latitude=48.14<br>longitude=180.00</code></td>
+<td><a href="TC6_Request.JPG">TC6 request</a></td>
+<td>200 OK</td>
+<td><a href="TC6_Response.JSON">TC6 response</a></td>
+<td>Maximum valid longitude value was accepted.</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>TC-07 – Longitude above upper boundary</td>
+<td><code>latitude=48.14<br>longitude=180.01</code></td>
+<td><a href="TC7_Request.JPG">TC7 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC7_Response.JSON">TC7 response</a></td>
+<td>Invalid longitude value was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr class="pass">
+<td>TC-08 – Longitude lower boundary</td>
+<td><code>latitude=48.14<br>longitude=-180.00</code></td>
+<td><a href="TC8_Request.JPG">TC8 request</a></td>
+<td>200 OK</td>
+<td><a href="TC8_Response.JSON">TC8 response</a></td>
+<td>Minimum valid longitude value was accepted.</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>TC-09 – Longitude below lower boundary</td>
+<td><code>latitude=48.14<br>longitude=-180.01</code></td>
+<td><a href="TC9_Request.JPG">TC9 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC9_Response.JSON">TC9 response</a></td>
+<td>Invalid longitude value was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr class="bug">
+<td>TC-10 – Missing latitude</td>
+<td><code>longitude=17.10</code></td>
+<td><a href="TC10_Request.JPG">TC10 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC10_Response.JSON">TC10 response</a></td>
+<td>The request was correctly rejected. However, the error message does not explicitly indicate that the required <code>latitude</code> parameter is missing.</td>
+<td>Potential bug</td>
+</tr>
+
+<tr class="bug">
+<td>TC-11 – Missing longitude</td>
+<td><code>latitude=48.14</code></td>
+<td><a href="TC11_Request.JPG">TC11 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC11_Response.JSON">TC11 response</a></td>
+<td>The request was correctly rejected. However, the error message does not explicitly indicate that the required <code>longitude</code> parameter is missing.</td>
+<td>Potential bug</td>
+</tr>
+
+<tr>
+<td>TC-12 – Invalid latitude type</td>
+<td><code>latitude=Bratislava<br>longitude=17.10</code></td>
+<td><a href="TC12_Request.JPG">TC12 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC12_Response.JSON">TC12 response</a></td>
+<td>Non-numeric latitude input was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>TC-13 – Invalid longitude type</td>
+<td><code>latitude=48.14<br>longitude=Bratislava</code></td>
+<td><a href="TC13_Request.JPG">TC13 request</a></td>
+<td>400 Bad Request</td>
+<td><a href="TC13_Response.JSON">TC13 response</a></td>
+<td>Non-numeric longitude input was rejected.</td>
+<td>—</td>
+</tr>
+
+<tr class="pass">
+<td>TC-14 – Integer coordinates</td>
+<td><code>latitude=48<br>longitude=17</code></td>
+<td><a href="TC14_Request.JPG">TC14 request</a></td>
+<td>200 OK</td>
+<td><a href="TC14_Response.JSON">TC14 response</a></td>
+<td>The API accepted integer coordinate values.</td>
+<td>—</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>4. Bugs / Findings</h2>
+
+<table>
+<thead>
+<tr><th>ID</th><th>Finding</th><th>Expected</th><th>Actual</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr class="bug">
+<td>BUG-001</td>
+<td>Missing latitude error message</td>
+<td>The error should clearly indicate that the required <code>latitude</code> parameter is missing.</td>
+<td>The request returns HTTP 400, but the error message does not explicitly identify the missing latitude parameter.</td>
+<td>Potential bug</td>
+</tr>
+<tr class="bug">
+<td>BUG-002</td>
+<td>Missing longitude error message</td>
+<td>The error should clearly indicate that the required <code>longitude</code> parameter is missing.</td>
+<td>The request returns HTTP 400, but the error message does not explicitly identify the missing longitude parameter.</td>
+<td>Potential bug</td>
+</tr>
+</tbody>
+</table>
+
+<h2>5. Test Report Summary</h2>
+
+<div class="summary">
+<p>The testing focused on the required geographical coordinate parameters of the Open-Meteo Forecast API. Boundary values, invalid values, missing parameters and integer coordinate values were tested.</p>
+
+<p>The API correctly accepted valid latitude and longitude boundary values and rejected values outside the valid coordinate ranges. It also rejected non-numeric coordinate values.</p>
+
+<p>Two potential issues were identified when a required coordinate parameter was omitted. The API correctly returned HTTP 400, but the error message did not explicitly identify which required parameter was missing.</p>
+
+<p>When only latitude and longitude were provided, the response contained location-related metadata such as timezone and elevation. No weather variables were requested in this test scenario.</p>
+
+<p>The response also reported the location's calculated elevation. The precision of the returned location coordinates should be evaluated in a separate test scenario.</p>
+</div>
+
+<h2>6. Attachments</h2>
+<ul>
+<li><a href="TC1_Request.JPG">TC1 Request</a> / <a href="TC1_Response.JSON">TC1 Response</a></li>
+<li><a href="TC2_Request.JPG">TC2 Request</a> / <a href="TC2_Response.JSON">TC2 Response</a></li>
+<li><a href="TC3_Request.JPG">TC3 Request</a> / <a href="TC3_Response.JSON">TC3 Response</a></li>
+<li><a href="TC4_Request.JPG">TC4 Request</a> / <a href="TC4_Response.JSON">TC4 Response</a></li>
+<li><a href="TC5_Request.JPG">TC5 Request</a> / <a href="TC5_Response.JSON">TC5 Response</a></li>
+<li><a href="TC6_Request.JPG">TC6 Request</a> / <a href="TC6_Response.JSON">TC6 Response</a></li>
+<li><a href="TC7_Request.JPG">TC7 Request</a> / <a href="TC7_Response.JSON">TC7 Response</a></li>
+<li><a href="TC8_Request.JPG">TC8 Request</a> / <a href="TC8_Response.JSON">TC8 response</a></li>
+<li><a href="TC9_Request.JPG">TC9 Request</a> / <a href="TC9_Response.JSON">TC9 Response</a></li>
+<li><a href="TC10_Request.JPG">TC10 Request</a> / <a href="TC10_Response.JSON">TC10 Response</a></li>
+<li><a href="TC11_Request.JPG">TC11 Request</a> / <a href="TC11_Response.JSON">TC11 Response</a></li>
+<li><a href="TC12_Request.JPG">TC12 Request</a> / <a href="TC12_Response.JSON">TC12 Response</a></li>
+<li><a href="TC13_Request.JPG">TC13 Request</a> / <a href="TC13_Response.JSON">TC13 Response</a></li>
+<li><a href="TC14_Request.JPG">TC14 Request</a> / <a href="TC14_Response.JSON">TC14 Response</a></li>
+</ul>
+
+</body>
+</html>
