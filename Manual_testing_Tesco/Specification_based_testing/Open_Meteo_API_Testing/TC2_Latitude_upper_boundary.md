@@ -20,4 +20,6 @@ Check the response body.
 
 Expected result:
 
-API accepts the request successfully. API returns HTTP 200 OK. Response body is returned in JSON format.
+API accepts the request successfully.
+API returns HTTP 200 OK. 
+Response body is returned in JSON format.
