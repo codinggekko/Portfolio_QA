@@ -1,6 +1,6 @@
-TC-06 — Longitude upper boundary
+TC-14 — Integer coordinates
 
-Test Case: Verify that the API returns weather data for the maximum valid longitude.
+Test Case: Verify that the API accepts integer coordinates and returns weather data.
 
 Method: GET
 
@@ -9,8 +9,8 @@ https://api.open-meteo.com/v1/forecast
 
 Test data:
 
-Latitude: 48.14
-Longitude: 180.00
+Latitude: 48
+Longitude: 17
 
 Steps:
 
@@ -20,6 +20,6 @@ Check the response body.
 
 Expected result:
 
-Response status is 200 OK.
+API accepts the request successfully.
+API returns HTTP 200 OK.
 Response body is returned in JSON format.
-Weather data is provided for the requested coordinates.

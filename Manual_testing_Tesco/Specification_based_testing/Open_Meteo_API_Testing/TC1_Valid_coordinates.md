@@ -21,6 +21,6 @@ Check the response body.
 
 Expected result:
 
-Response status is 200 OK.
+API accepts the request successfully.
+API returns HTTP 200 OK.
 Response body is returned in JSON format.
-Weather data is provided for the requested coordinates.
