@@ -1,7 +1,7 @@
 
 TC-15 — Multiple locations
 
-Test Case: Verify that the API returns weather data for two valid coordinates.
+Test Case: Verify that the API returns weather data for two locations with valid coordinates.
 
 Method: GET
 
