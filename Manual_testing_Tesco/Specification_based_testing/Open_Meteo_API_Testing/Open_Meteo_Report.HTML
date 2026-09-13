@@ -277,15 +277,17 @@ code{background:#f3f3f3;padding:2px 5px;border-radius:4px}
 <h2>5. Test Report Summary</h2>
 
 <div class="summary">
-<p>The testing focused on the required geographical coordinate parameters of the Open-Meteo Forecast API. Boundary values, invalid values, missing parameters and integer coordinate values were tested.</p>
+<p>The testing focused on the required geographical coordinate parameters of the Open-Meteo Forecast API. Boundary values, invalid values, missing parameters, integer coordinate values and multiple coordinates were tested.</p>
 
 <p>The API correctly accepted valid latitude and longitude boundary values and rejected values outside the valid coordinate ranges. It also rejected non-numeric coordinate values.</p>
 
 <p>Two potential issues were identified when a required coordinate parameter was omitted. The API correctly returned HTTP 400, but the error message did not explicitly identify which required parameter was missing.</p>
 
-<p>When only latitude and longitude were provided, the response contained location-related metadata such as timezone and elevation. No weather variables were requested in this test scenario.</p>
+<p>When correct coordinates were provided, the response contained location-related metadata such as timezone and elevation. No weather variables were requested in this test scenario, therefore no weather data were returned.</p>
 
-<p>The response also reported the location's calculated elevation. The precision of the returned location coordinates should be evaluated in a separate test scenario.</p>
+<p>The response also reported the location's calculated elevation. </p>
+
+<p> The precision of the location coordinates should be evaluated in a separate test scenario.</p>
 </div>
 
 <h2>6. Attachments</h2>
