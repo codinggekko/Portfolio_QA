@@ -1,1 +1,5 @@
+input: 
 
+#expected output: The number which has been already used will be rejected with the comment Taken, choose another. 
+#The app ask input again. After filling the whole raw with one player's symbols, game ends with the comment Player (O or X) wins
+#(the player is chosen randomly, therefore we cannot tell which player wins)
