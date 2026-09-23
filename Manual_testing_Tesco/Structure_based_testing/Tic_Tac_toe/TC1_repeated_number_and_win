@@ -1,5 +1,10 @@
 input: 
+1, 1, 4, 2, 5, 3
 
-#expected output: The number which has been already used will be rejected with the comment Taken, choose another. 
+#expected output: 
+#The first player (O or X) will be chosen randomly and app will ask to insert input 
+
+
+The number which has been already used will be rejected with the comment Taken, choose another. 
 #The app ask input again. After filling the whole raw with one player's symbols, game ends with the comment Player (O or X) wins
 #(the player is chosen randomly, therefore we cannot tell which player wins)
