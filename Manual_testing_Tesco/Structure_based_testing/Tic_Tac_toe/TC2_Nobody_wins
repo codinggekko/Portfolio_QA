@@ -1,1 +1,24 @@
+input: 
+1, 2, 3, 5, 4, 6, 8, 7, 9
 
+Expected outcome: 
+
+The first player (O or X) will be chosen randomly and app will ask to insert input with the comment "O's turn" or "X's turn".
+Number 1 is accepted as the input. 
+The second player is asked to insert input.
+Number 2 is not accepted as the input. 
+The first player will be asked to insert input again with the comment "O's turn" or "X's turn". 
+Number 3 is accepted as the input. 
+The second player is asked to insert input. 
+Number 4 is accepted as the input. 
+The first player is asked to insert input. 
+Number 5 is accepted as the input. 
+The second player is asked to insert input. 
+Number 6 is accepted as the input. 
+The first player is asked to insert input. 
+Number 7 is accepted as the input. 
+The second player is asked to insert input. 
+Number 8 is accepted as the input. 
+The first player is asked to insert input. 
+Number 9 is accepted as the input.
+There is no empty space, the game is ended with the comment "Draw" 
