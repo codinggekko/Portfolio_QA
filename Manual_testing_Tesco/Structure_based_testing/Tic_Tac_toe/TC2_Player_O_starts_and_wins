@@ -2,7 +2,7 @@ TC2 – Player O starts and wins
 input: 
 1, 2, 4, 3, 7 
 Expected outcome: 
-The 3x3 game board is shown with the numbers representing positions. 
+The 3x3 board alignment is shown with the numbers representing positions. 
 Game is run until Player O starts (chosen randomly). 
 Player O is asked to insert input with the comment "O's turn". Number 1 is accepted as the input and marked on the board. 
 Player X is asked to insert input with comment „X’s turn“. 
@@ -16,7 +16,7 @@ Number 7 is accepted as input and marked on the board.
 Player O wins with the commnet „Player O wins!“. 
 
 Actual outcome: 
-The 3x3 game board was shown with the numbers representing positions. 
+The 3x3 board alignment was shown with the numbers representing positions. 
 Player O started (in the first run). 
 Player O was asked to insert input with the comment "O's turn"./bug: UX bug  - the input instructions are not clear – there should be information  to choose positon from board and that the positions are represented by numbers
 Number 1 was accepted as the input and marked on the board. 
