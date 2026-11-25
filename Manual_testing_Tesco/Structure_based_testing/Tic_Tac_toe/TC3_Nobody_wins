@@ -1,1 +1,48 @@
+TC3 – Nobody wins 
+input: 
+1, 2, 3,5,4,6,8,7,9
+Expected outcome: 
+The 3x3 board alignment is shown with the numbers representing positions. 
+Random player starts the game. 
+First player is asked to insert input with the comment "X/O's turn". Number 1 is accepted as the input and marked on the board. 
+Second Player  is asked to insert input with comment „X/O’s turn“. 
+Number 2 is accepted as the input and marked on the board.
+First Player is asked to insert input again with the comment "X/O's turn". 
+Number 3 is accepted as input and marked on the board. 
+Second Player is asked to insert input with comment „X/O’s turn“.
+Number 5 is accepted as the input and marked on the board.
+First Player is asked to insert input again with the comment "X/O‘s turn". 
+Number 4 is accepted as input and marked on the board. 
+Second Player is asked to insert input again with the comment "X/O‘s turn". 
+Number 6 is accepted as input and marked on the board. 
+First Player is asked to insert input again with the comment "X/O‘s turn". 
+Number 8 is accepted as input and marked on the board. 
+Second Player is asked to insert input again with the comment "X/O‘s turn". 
+Number 7 is accepted as input and marked on the board. 
+First Player is asked to insert input again with the comment "X/O‘s turn". 
+Number 9 is accepted as input and marked on the board. 
+There is no empty space on the game board and game end with the comment „Draw“. 
+Actual outcome: 
+The 3x3 board alignment was shown with the numbers representing positions. 
+Player X started the game. 
+Player X was asked to insert input with the comment "X's turn". Number 1 was accepted as the input and marked on the board. 
+Player O was asked to insert input with comment „O’s turn“. 
+Number 2 was accepted as the input and marked on the board.
+Player X was asked to insert input again with the comment "X's turn". 
+Number 3 was accepted as input and marked on the board. 
+Player O was asked to insert input with comment „O’s turn“.
+Number 5 was accepted as the input and marked on the board.
+Player X was asked to insert input again with the comment "X‘s turn". 
+Number 4 was accepted as input and marked on the board. 
+Player O was asked to insert input again with the comment "O‘s turn". 
+Number 6 was accepted as input and marked on the board. 
+Player X was asked to insert input again with the comment "X‘s turn". 
+Number 8 was accepted as input and marked on the board. 
+Player O was asked to insert input again with the comment "O‘s turn". 
+Number 7 was accepted as input and marked on the board. 
+Player X was asked to insert input again with the comment "X‘s turn". 
+Number 9 was accepted as input and marked on the board. 
+There was no empty space on the game board and game ended with the comment „Draw“. 
+
+
 
