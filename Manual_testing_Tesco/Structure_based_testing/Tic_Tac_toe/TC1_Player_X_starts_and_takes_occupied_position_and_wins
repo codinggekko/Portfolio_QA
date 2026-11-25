@@ -2,7 +2,7 @@ TC1 – Player X starts and takes occupied position and wins
 input: 
 1, 2,2,4,3,7
 Expected outcome: 
-The 3x3 game board is shown with the numbers representing positions. 
+The 3x3 board alignment is shown with the numbers representing positions. 
 Game is run until Player X starts (chosen randomly). 
 Player X is asked to insert input with the comment "X's turn". Number 1 is accepted as the input and marked on the board. 
 Player O is asked to insert input with comment „O’s turn“. 
@@ -18,7 +18,7 @@ Number 7 is accepted as input and marked on the board.
 Player X wins with the commnet „Player X wins!“. 
 
 Actual outcome: 
-The 3x3 game board was shown with the numbers representing positions. 
+The 3x3 board alignment was shown with the numbers representing positions. 
 Player X started (in the first run). 
 Player X was asked to insert input with the comment "X's turn"./bug: UX bug  - the input instructions are not clear – there should be information  to choose positon from board and that the positions are represented by numbers
 Number 1 was accepted as the input and marked on the board. 
@@ -32,5 +32,5 @@ Player O was asked to insert input with comment „O’s turn“.
 Number 3 was accepted as the input and marked on the board.
 Player X was asked to insert input again with the comment "X's turn". 
 Number 7 was accepted as input and marked on the board. 
-Player X wins with the commnet „Player X wins!“. / UX bug – there should be information about ending the game/starting new game (press enter to start new game /press enter to exit. There could be the algoritm to automatically start new game session)
+Player X won with the commnet „Player X wins!“. / UX bug – there should be information about ending the game/starting new game (press enter to start new game /press enter to exit. There could be the algoritm to automatically start new game session)
 
